@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phạm Đình Được | Data & Analytics Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN for rapid styling) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#161922', // Nền màu xanh đen sâu
+                        darker: '#0e1117',
+                        accent: '#E65D4F', // Màu cam san hô theo thiết kế
+                        lightText: '#e2e8f0',
+                        mutedText: '#94a3b8'
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Open Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #161922;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        .text-huge {
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 1.1;
+        }
+        
+        .tracking-mega {
+            letter-spacing: 0.5em;
+        }
+
+        /* Decorative Elements matching the image */
+        .vertical-line {
+            width: 1px;
+            height: 100px;
+            background-color: #E65D4F;
+            margin: 0 auto;
+        }
+
+        .accent-circle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: #E65D4F;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        .big-number {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 15rem;
+            color: rgba(255, 255, 255, 0.03);
+            position: absolute;
+            top: -50px;
+            left: -20px;
+            z-index: 0;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0e1117;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E65D4F;
+        }
+
+        /* Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 1s ease-out;
+        }
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 1s ease-out;
+        }
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .image-container img {
+            transition: transform 0.7s ease;
+        }
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-body antialiased selection:bg-accent selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 mix-blend-difference px-8 py-6 flex justify-between items-center text-sm font-heading tracking-widest uppercase">
+        <a href="#hero" class="font-bold">DuoChip</a>
+        <div class="hidden md:flex gap-8">
+            <a href="#about" class="hover:text-accent transition-colors">About</a>
+            <a href="#skills" class="hover:text-accent transition-colors">Skills</a>
+            <a href="#works" class="hover:text-accent transition-colors">Works</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex flex-col justify-center items-center relative px-4 pt-20">
+        <div class="text-center reveal relative z-10">
+            <p class="font-heading tracking-mega text-xs md:text-sm text-accent mb-6 uppercase">Selected Works 2023 - 2026</p>
+            <h1 class="font-heading font-bold text-huge uppercase mb-4 tracking-tight">Data & Web<br>Portfolio</h1>
+            
+            <div class="flex items-center justify-center gap-6 mt-8 mb-12 text-xs md:text-sm tracking-widest uppercase text-mutedText">
+                <span>D</span><span>E</span><span>S</span><span>I</span><span>G</span><span>N</span>
+                <span class="w-12 h-px bg-mutedText"></span>
+                <span>P</span><span>O</span><span>R</span><span>T</span><span>F</span><span>O</span><span>L</span><span>I</span><span>O</span>
+            </div>
+
+            <p class="font-heading font-light tracking-widest text-lg mt-12 mb-4 uppercase">Phạm Đình Được</p>
+            <p class="text-sm text-mutedText font-light max-w-md mx-auto">Data & Analytics Intern | Computer Science Undergraduate</p>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 reveal delay-500">
+            <div class="vertical-line"></div>
+            <p class="text-xs tracking-widest uppercase">Scroll</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 px-6 md:px-16 lg:px-32 bg-darker relative overflow-hidden">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20">
+            
+            <!-- Left: Title & Image -->
+            <div class="lg:w-5/12 relative reveal-left">
+                <div class="relative inline-block mb-12">
+                    <div class="accent-circle w-24 h-24 -left-6 -top-6"></div>
+                    <h2 class="font-heading text-5xl md:text-7xl font-bold leading-none">ABOUT<br>ME</h2>
+                </div>
+                
+                <div class="mb-8">
+                    <p class="text-xl font-heading mb-2 text-accent">Hello everyone,</p>
+                    <p class="text-xl font-heading font-bold">I am Pham Dinh Duoc</p>
+                </div>
+
+                <div class="image-container overflow-hidden h-[400px] w-full border border-gray-800">
+                    <!-- Placeholder ảnh cá nhân. Bạn có thể thay bằng link ảnh thật -->
+                    <img src="images/me.png" alt="Pham Dinh Duoc" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                </div>
+            </div>
+
+            <!-- Right: Text Content -->
+            <div class="lg:w-7/12 flex flex-col justify-center reveal-right">
+                <h3 class="text-sm font-heading tracking-widest uppercase text-accent mb-6">Summary</h3>
+                <p class="text-mutedText leading-relaxed mb-10 text-justify">
+                    Computer Science undergraduate at Ho Chi Minh City University of Technology (HCMUT - Bach Khoa) with a strong engineering background. Skilled in data cleaning, analysis, and visualization using Python, SQL, and Tableau. Experienced in transforming raw data into dashboards and actionable insights to support business decision-making.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div>
+                        <h3 class="text-sm font-heading tracking-widest uppercase text-accent mb-4 border-b border-gray-800 pb-2">Education</h3>
+                        <p class="font-bold text-lg">HCMUT - Bach Khoa</p>
+                        <p class="text-mutedText text-sm mb-2">Bachelor of Computer Science</p>
+                        <p class="text-accent font-heading font-bold">GPA: 3.3/4.0</p>
+                        <p class="text-xs text-mutedText mt-2">Jan 2023 - Present</p>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-heading tracking-widest uppercase text-accent mb-4 border-b border-gray-800 pb-2">Contact</h3>
+                        <ul class="space-y-3 text-sm text-mutedText">
+                            <li><i class="fas fa-envelope w-6 text-accent"></i> duoc7090@gmail.com</li>
+                            <li><i class="fas fa-phone w-6 text-accent"></i> (+84) 364998870</li>
+                            <li><i class="fab fa-linkedin w-6 text-accent"></i> <a href="https://www.linkedin.com/in/duoc-phamdinh/" target="_blank" class="hover:text-accent transition-colors">in/duoc-phamdinh</a></li>
+                            <li><i class="fas fa-map-marker-alt w-6 text-accent"></i> Ho Chi Minh City, Vietnam</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Tools (Styling inspired by the numbers page in the image) -->
+    <section id="skills" class="py-24 bg-dark relative border-y border-gray-900">
+        <div class="max-w-7xl mx-auto px-6 lg:px-32">
+            <div class="text-center mb-20 reveal">
+                <h2 class="font-heading text-4xl font-bold tracking-widest uppercase">Abilities & Skills</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+                <!-- Skill 1 -->
+                <div class="reveal delay-100">
+                    <p class="font-heading font-bold text-5xl text-accent mb-2">PY</p>
+                    <p class="text-xs tracking-widest uppercase text-mutedText">Python / Pandas</p>
+                </div>
+                <!-- Skill 2 -->
+                <div class="reveal delay-200">
+                    <p class="font-heading font-bold text-5xl text-accent mb-2">SQL</p>
+                    <p class="text-xs tracking-widest uppercase text-mutedText">MSSQL / PostgreSQL</p>
+                </div>
+                <!-- Skill 3 -->
+                <div class="reveal delay-300">
+                    <p class="font-heading font-bold text-5xl text-accent mb-2">TB</p>
+                    <p class="text-xs tracking-widest uppercase text-mutedText">Tableau / BI Tools</p>
+                </div>
+                <!-- Skill 4 -->
+                <div class="reveal delay-400">
+                    <p class="font-heading font-bold text-5xl text-accent mb-2">&lt;/&gt;</p>
+                    <p class="text-xs tracking-widest uppercase text-mutedText">Web Dev</p>
+                </div>
+            </div>
+
+            <!-- Detailed Skills List -->
+            <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm reveal">
+                <div class="bg-darker p-8 border-l-2 border-accent">
+                    <h4 class="font-heading font-bold text-white mb-4 uppercase">Dev Tools & Lang</h4>
+                    <p class="text-mutedText leading-loose">C++, HTML/CSS, JavaScript<br>Docker, Git</p>
+                </div>
+                <div class="bg-darker p-8 border-l-2 border-accent">
+                    <h4 class="font-heading font-bold text-white mb-4 uppercase">Data & BI</h4>
+                    <p class="text-mutedText leading-loose">Microsoft Excel (Pivot, Func)<br>Power Query, Pentaho (ETL)</p>
+                </div>
+                <div class="bg-darker p-8 border-l-2 border-accent">
+                    <h4 class="font-heading font-bold text-white mb-4 uppercase">Analytical Tech</h4>
+                    <p class="text-mutedText leading-loose">EDA, RFM Analysis<br>Feature Selection, Stats Modeling</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter Title Layout -->
+    <section class="py-32 bg-darker relative overflow-hidden flex items-center min-h-[60vh]">
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10 reveal">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-1/2 relative">
+                    <div class="accent-circle w-64 h-64 -left-10 -top-10 scale-150 md:scale-100 hidden md:block"></div>
+                    <h2 class="font-heading text-6xl md:text-8xl font-bold leading-none tracking-tighter uppercase relative z-10">
+                        Selected<br>
+                        <span class="text-transparent" style="-webkit-text-stroke: 2px #E65D4F;">Works</span>
+                    </h2>
+                </div>
+                <div class="md:w-1/2 text-mutedText text-sm leading-relaxed border-l border-gray-800 pl-8">
+                    <p>A collection of my best projects across Data Analysis, Business Intelligence, Data Mining, and Full-stack Web Development. Turning raw data and code into impactful solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Works Section -->
+    <section id="works" class="bg-dark">
+        
+        <!-- Project 1: Data Analytics (Alternating Layout) -->
+        <div class="py-24 px-6 lg:px-16 border-b border-gray-900 relative">
+            <div class="big-number">01</div>
+            <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10">
+                <div class="lg:w-1/2 image-container overflow-hidden h-[500px] w-full">
+                    <!-- Placeholder: E-commerce Dashboard -->
+                    <img src="images/e-commerce.png" alt="E-Commerce Sales Analysis" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                </div>
+                <div class="lg:w-1/2 reveal-right">
+                    <div class="flex flex-wrap justify-between items-center mb-4 gap-4">
+                        <p class="text-accent text-xs font-heading tracking-widest uppercase">Jan 2026 • Data Analyst</p>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/DuoChip/e-commerce" target="_blank" class="text-mutedText hover:text-white transition-colors text-sm flex items-center gap-2"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://public.tableau.com/views/e-commerce-dashboard/Dashboard5?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" class="text-mutedText hover:text-accent transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-chart-pie"></i> Tableau</a>
+                        </div>
+                    </div>
+                    <h3 class="text-4xl font-heading font-bold mb-6">E-Commerce Sales Analysis</h3>
+                    <ul class="space-y-4 text-mutedText text-sm text-justify list-disc pl-4 mb-8">
+                        <li>Cleaned and pre-processed a dataset of 500,000+ transaction records using Python (Pandas) to handle missing values and inconsistent formats.</li>
+                        <li>Designed an interactive dashboard in Tableau to visualize key metrics (Sales, Churn Rate, Customer LTV), aiding marketing teams in operational decision-making.</li>
+                        <li>Performed RFM Analysis to segment customers, identifying the top 20% high-value clients for targeted, cost-effective marketing campaigns.</li>
+                    </ul>
+                    <div class="flex gap-4">
+                        <span class="px-3 py-1 border border-gray-700 text-xs text-gray-400">Python</span>
+                        <span class="px-3 py-1 border border-gray-700 text-xs text-gray-400">Tableau</span>
+                        <span class="px-3 py-1 border border-gray-700 text-xs text-gray-400">RFM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2: BI (Reversed Layout) -->
+        <div class="py-24 px-6 lg:px-16 border-b border-gray-900 bg-darker relative">
+            <div class="big-number" style="left: auto; right: 0;">02</div>
+            <div class="max-w-7xl mx-auto flex flex-col lg:flex-row-reverse items-center gap-16 relative z-10">
+                <div class="lg:w-1/2 image-container overflow-hidden h-[500px] w-full">
+                    <!-- Placeholder: BI System -->
+                    <img src="images/bi-system.png" alt="Coffee Shop BI" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                </div>
+                <div class="lg:w-1/2 reveal-left">
+                    <div class="flex flex-wrap justify-between items-center mb-4 gap-4">
+                        <p class="text-accent text-xs font-heading tracking-widest uppercase">May 2026 • BI Engineer • Team of 4</p>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/DuoChip/Coffee_Shop_DW_Project" target="_blank" class="text-mutedText hover:text-white transition-colors text-sm flex items-center gap-2"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" target="_blank" class="text-mutedText hover:text-accent transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-desktop"></i> Dashboard</a>
+                        </div>
+                    </div>
+                    <h3 class="text-4xl font-heading font-bold mb-6">Coffee Shop BI & Decision Support System</h3>
+                    <ul class="space-y-4 text-mutedText text-sm text-justify list-disc pl-4 mb-8">
+                        <li>Engineered an end-to-end ETL pipeline using Pentaho Data Integration to transform raw sales data into a Star Schema Data Warehouse hosted on Neon PostgreSQL.</li>
+                        <li>Applied Machine Learning algorithms (K-Means Clustering, FP-Growth) using Python to segment store-day behaviors and identify product bundling opportunities for cross-selling.</li>
+                        <li>Built an interactive DSS dashboard via Streamlit and Plotly to visualize key metrics and generate actionable recommendations for inventory and promotion.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-3 py-1 border border-gray-700 text-xs text-gray-400">Pentaho ETL</span>
+                        <span class="px-3 py-1 border border-gray-700 text-xs text-gray-400">PostgreSQL</span>
+                        <span class="px-3 py-1 border border-gray-700 text-xs text-gray-400">Machine Learning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 3: Brew & Bite -->
+        <div class="py-24 px-6 lg:px-16 border-b border-gray-900 relative">
+             <div class="big-number">03</div>
+            <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10">
+                <div class="lg:w-1/2 image-container overflow-hidden h-[500px] w-full">
+                    <!-- Placeholder: Coffee Shop DB -->
+                    <img src="images/brew-and-bite.png" alt="Brew & Bite System" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                </div>
+                <div class="lg:w-1/2 reveal-right">
+                    <div class="flex flex-wrap justify-between items-center mb-4 gap-4">
+                        <p class="text-accent text-xs font-heading tracking-widest uppercase">Database Developer • Team of 4</p>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/DuoChip/BrewAndBite" target="_blank" class="text-mutedText hover:text-white transition-colors text-sm flex items-center gap-2"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                    <h3 class="text-4xl font-heading font-bold mb-6">Brew & Bite Coffee Shop Management System</h3>
+                    <ul class="space-y-4 text-mutedText text-sm text-justify list-disc pl-4 mb-8">
+                        <li>Designed and deployed a comprehensive MS SQL Server database, writing complex SQL queries, stored procedures, functions, and triggers to manage orders, inventory, and user data.</li>
+                        <li>Engineered backend APIs with Node.js and Express to handle role-based access control (Customer, Manager, Staff), intelligent cart management, and voucher integration.</li>
+                        <li>Implemented advanced database logic, including real-time product category counting using SQL Cursors and automated loyalty point calculations for VIP tier progression.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-3 py-1 border border-gray-700 text-xs text-gray-400">MS SQL Server</span>
+                        <span class="px-3 py-1 border border-gray-700 text-xs text-gray-400">Node.js</span>
+                        <span class="px-3 py-1 border border-gray-700 text-xs text-gray-400">Express</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Academic & Mini Projects (Grid Layout) -->
+        <div class="py-32 px-6 lg:px-16 bg-darker relative">
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="font-heading text-4xl font-bold uppercase mb-4">Academic & Mini Projects</h2>
+                    <p class="text-mutedText text-sm">Smaller scale projects focused on specific technical concepts and data models.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Card 1: AI Salary -->
+                    <div class="reveal group bg-dark p-8 border border-gray-800 hover:border-accent transition-colors flex flex-col h-full">
+                        <div class="flex justify-between items-start mb-6">
+                            <i class="fa-solid fa-robot text-3xl text-accent opacity-80"></i>
+                            <div class="flex gap-4">
+                                <a href="https://github.com/DuoChip/AI_Jobs_Salary" target="_blank" class="text-mutedText hover:text-white transition-colors"><i class="fab fa-github text-2xl"></i></a>
+                                <a href="https://public.tableau.com/app/profile/duoc.pham.dinh/viz/AI_SalaryTry/AIJOBSALARYANALYTICSDASHBOARD4" target="_blank" class="text-mutedText hover:text-accent transition-colors"><i class="fa-solid fa-chart-pie text-2xl"></i></a>
+                            </div>
+                        </div>
+                        <h4 class="font-heading font-bold text-xl mb-4 leading-snug">AI Job Salary Analysis & Prediction</h4>
+                        <p class="text-sm text-mutedText mb-8 flex-grow leading-relaxed">Conducted EDA and extracted features from job datasets. Built and trained XGBoost and Decision Tree regressors to predict continuous USD salaries with high accuracy.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="px-2 py-1 bg-darker text-xs text-gray-400 border border-gray-800">Python</span>
+                            <span class="px-2 py-1 bg-darker text-xs text-gray-400 border border-gray-800">XGBoost</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: BK-TSS -->
+                    <div class="reveal delay-100 group bg-dark p-8 border border-gray-800 hover:border-accent transition-colors flex flex-col h-full">
+                        <div class="flex justify-between items-start mb-6">
+                            <i class="fa-solid fa-graduation-cap text-3xl text-accent opacity-80"></i>
+                            <a href="https://github.com/ndbkha/CNPM_PRO_MAX-TSS-WEB" target="_blank" class="text-mutedText hover:text-white transition-colors"><i class="fab fa-github text-2xl"></i></a>
+                        </div>
+                        <h4 class="font-heading font-bold text-xl mb-4 leading-snug">HCMUT Tutor Support System</h4>
+                        <p class="text-sm text-mutedText mb-8 flex-grow leading-relaxed">Full-stack university tutoring platform. Managed student bookings and tutor schedules using a robust API and relational database.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="px-2 py-1 bg-darker text-xs text-gray-400 border border-gray-800">ReactJS</span>
+                            <span class="px-2 py-1 bg-darker text-xs text-gray-400 border border-gray-800">FastAPI</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Life Expectancy -->
+                    <div class="reveal delay-200 group bg-dark p-8 border border-gray-800 hover:border-accent transition-colors flex flex-col h-full">
+                        <div class="flex justify-between items-start mb-6">
+                            <i class="fa-solid fa-earth-americas text-3xl text-accent opacity-80"></i>
+                            <div class="flex gap-4">
+                                <a href="https://github.com/DuoChip/Analysis_of_Life_Expectancy" target="_blank" class="text-mutedText hover:text-white transition-colors"><i class="fab fa-github text-2xl"></i></a>
+                                <a href="https://public.tableau.com/app/profile/duoc.pham.dinh/viz/LifeExpectancyProject-DataProject/EDA" target="_blank" class="text-mutedText hover:text-accent transition-colors"><i class="fa-solid fa-chart-pie text-2xl"></i></a>
+                            </div>
+                        </div>
+                        <h4 class="font-heading font-bold text-xl mb-4 leading-snug">Global Life Expectancy Analysis</h4>
+                        <p class="text-sm text-mutedText mb-8 flex-grow leading-relaxed">Built SVR models to predict life expectancy from World Bank data. Designed Tableau dashboards to visualize key socio-economic impacts.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="px-2 py-1 bg-darker text-xs text-gray-400 border border-gray-800">SVR (ML)</span>
+                            <span class="px-2 py-1 bg-darker text-xs text-gray-400 border border-gray-800">Tableau</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Awards & Extra -->
+    <section class="py-24 bg-accent text-dark relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-32 flex flex-col md:flex-row gap-16 reveal">
+            <div class="md:w-1/2">
+                <h3 class="font-heading font-bold text-4xl uppercase mb-8 border-b border-dark/20 pb-4">Awards</h3>
+                <div class="mb-6">
+                    <p class="font-bold text-xl">Top 20 Bach Khoa Innovation 2025</p>
+                    <p class="text-sm mt-2 opacity-80">GeoCarbon - A GIS-integrated SaaS platform for carbon credit tracking.</p>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <h3 class="font-heading font-bold text-4xl uppercase mb-8 border-b border-dark/20 pb-4">Activities</h3>
+                <ul class="space-y-6">
+                    <li>
+                        <p class="font-bold text-lg">Deputy Head of Communications</p>
+                        <p class="text-sm opacity-80">English Speaking Club of National University Dormitory (Oct 2025 - Mar 2026)</p>
+                    </li>
+                    <li>
+                        <p class="font-bold text-lg">Organizing Committee Member</p>
+                        <p class="text-sm opacity-80">Bach Khoa Open Badminton Tournament (Jul 2025, Jun 2024)</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-darker text-center border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="font-heading text-3xl font-bold uppercase tracking-widest mb-8">Let's Connect</h2>
+            <div class="flex justify-center gap-8 mb-8 text-2xl">
+                <a href="https://github.com/DuoChip" target="_blank" class="hover:text-accent transition-colors"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/duoc-phamdinh/" target="_blank" class="hover:text-accent transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="https://public.tableau.com/app/profile/duoc.pham.dinh/vizzes" target="_blank" class="hover:text-accent transition-colors"><i class="fa-solid fa-chart-pie"></i></a>
+                <a href="mailto:duoc7090@gmail.com" class="hover:text-accent transition-colors"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="text-xs text-gray-600 uppercase tracking-widest">© 2026 Pham Dinh Duoc. Designed with Data in mind.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 150;
+
+                reveals.forEach(reveal => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Trigger on load
+        });
+    </script>
+</body>
+</html>
